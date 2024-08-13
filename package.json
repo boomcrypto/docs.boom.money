@@ -1,15 +1,15 @@
 {
-  "name": "celestialdocs",
+  "name": "boomdocs",
   "type": "module",
   "version": "0.0.5",
-  "description": "Documentation template using AstroJS and Shadcn",
-  "author": "Hyperoot <rajesh@hyperoot.dev>",
+  "description": "Documentation for the Boom ecosystem.",
+  "author": "Dan <dantrevino@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/HYP3R00T/CelestialDocs"
+    "url": "https://github.com/boomcrypto/docs.boom.money"
   },
-  "homepage": "https://celestialdocs.hyperoot.dev/",
+  "homepage": "https://docs.boom.money/",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
