@@ -1,12 +1,12 @@
 import type { SocialObjects } from "@/lib/types";
 
 export const SITE = {
-  website: "https://hyperoot.dev", // replace this with your deployed domain
-  author: "HYP3R00T",
-  desc: "Documentation template using Astro and Shadcn",
-  title: "CelestialDocs",
+  website: "https://docs.boom.money", // replace this with your deployed domain
+  author: "dan",
+  desc: "Documentation and guides for the Boom ecosystem",
+  title: "Boom Docs",
   ogImage: "og-image.jpg",
-  repo: "https://github.com/HYP3R00T/CelestialDocs",
+  repo: "https://github.com/boomcrypto/docs.boom.money",
 };
 
 export const LOCALE = {
@@ -25,9 +25,8 @@ export const menu_items: { title: string; href: string }[] = [
 export const side_nav_menu_order: string[] = [
   "getting-started",
   "guides",
-  "guides/pages",
-  "guides/table-of-contents",
-  "guides/sidebar-navigation",
+  "guides/boom-wallet",
+  "guides/boom-smart-shops",
   "custom-components",
   "reference",
 ];
@@ -49,20 +48,20 @@ export const docconfig = {
 export const Socials: SocialObjects = [
   {
     name: "Github",
-    href: "https://github.com/HYP3R00T/",
+    href: "https://github.com/boomcrypoto/",
     linkTitle: ` ${SITE.title} on Github`,
     active: true,
   },
   {
     name: "Facebook",
-    href: "https://github.com/HYP3R00T/",
-    linkTitle: `${SITE.title} on Facebook`,
-    active: false,
+    href: "https://deletefacebook.com/",
+    linkTitle: `${SITE.title} is NOT on Facebook`,
+    active: true,
   },
   {
     name: "Instagram",
-    href: "https://github.com/HYP3R00T/",
-    linkTitle: `${SITE.title} on Instagram`,
+    href: "https://help.instagram.com/139886812848894",
+    linkTitle: `${SITE.title} is NOT on Instagram`,
     active: false,
   },
   {
@@ -75,13 +74,13 @@ export const Socials: SocialObjects = [
     name: "Mail",
     href: "mailto:rajesh@hyperoot.dev",
     linkTitle: `Send an email to ${SITE.title}`,
-    active: true,
+    active: false,
   },
   {
-    name: "Twitter",
-    href: "https://github.com/HYP3R00T/",
-    linkTitle: `${SITE.title} on Twitter`,
-    active: false,
+    name: "Twitter/X",
+    href: "https://x.com/boom_wallet",
+    linkTitle: `${SITE.title} on X`,
+    active: true,
   },
   {
     name: "Twitch",
@@ -141,6 +140,6 @@ export const Socials: SocialObjects = [
     name: "Mastodon",
     href: "https://mastodon.social/@hyp3r00t",
     linkTitle: `${SITE.title} on Mastodon`,
-    active: true,
+    active: false,
   },
 ];
