@@ -1,3 +1,19 @@
+---
+title: Nostr and Boom
+author: Resh
+pubDatetime: 2024-08-30T20:17:00-06:00
+modDatetime: 2024-08-30T20:17:00-06:00
+description: Nostr and Boom Pioneering the Future of Decentralised Communication and Finance.
+draft: false
+tags:
+- Boom
+- Nostr
+- Communication
+hide_toc: false 
+hide_sidenav: false
+hide_breadcrumbs: false
+---
+
 **Nostr and Boom: Pioneering the Future of Decentralised Communication and Finance**
 
 As concerns about online privacy and data ownership grow, new technologies are stepping in to offer solutions. Two innovations, Nostr and Boom, are leading the charge in creating a more open and resilient digital ecosystem.
