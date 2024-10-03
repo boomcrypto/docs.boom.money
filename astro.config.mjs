@@ -1,39 +1,13 @@
-import { defineConfig } from "astro/config";
-import rehypeExternalLinks from "rehype-external-links";
-import tailwind from "@astrojs/tailwind";
-import react from "@astrojs/react";
-import mdx from "@astrojs/mdx";
+// @ts-check
+import { defineConfig } from 'astro/config'
 
-// https://astro.build/config
+import mdx from '@astrojs/mdx'
+import preact from '@astrojs/preact'
+import react from '@astrojs/react'
+import sitemap from '@astrojs/sitemap'
+
 export default defineConfig({
-  site: "https://docs.boom.money/",
-  markdown: {
-    smartypants: true,
-    syntaxHighlight: "shiki",
-    shikiConfig: {
-      // theme: "catppuccin-mocha",
-      themes: {
-        light: "catppuccin-latte",
-        dark: "catppuccin-macchiato",
-      },
-    },
-    rehypePlugins: [
-      [
-        rehypeExternalLinks,
-        {
-          target: "_blank",
-        },
-      ],
-    ],
-    prefetch: true,
-  },
-  integrations: [
-    react(),
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    mdx({
-      gfm: true,
-    }),
-  ],
-});
+  integrations: [mdx(), preact(), react(), sitemap()],
+  base: `/`,
+  site: `https://stackspay.org`
+})

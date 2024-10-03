@@ -1,36 +1,23 @@
 ---
-import { type CollectionEntry, getCollection } from "astro:content";
-import type { GetStaticPaths, MarkdownHeading } from "astro";
+import type { CollectionEntry } from 'astro:content'
+import { getCollection } from 'astro:content'
+import MainLayout from '../layouts/MainLayout.astro'
 
-import DocsLayout from "@/layouts/DocsLayout.astro";
+export async function getStaticPaths() {
+  const docs = await getCollection('docs')
+  return docs.map((entry) => ({
+    params: {
+      slug: entry.slug
+    },
+    props: entry
+  }))
+}
+type Props = CollectionEntry<'docs'>
 
-import type { Heading } from "@/lib/types";
-
-export const getStaticPaths = (async () => {
-  const docs = await getCollection("docs", ({ data }) => !data.draft);
-  const headings: MarkdownHeading[][] = await Promise.all(
-    docs.map((entry) => entry.render().then((data) => data.headings))
-  );
-
-  const posts = docs.map((entry, index) => {
-    return {
-      params: { slug: entry.slug },
-      props: { entry, headings: headings[index] },
-    };
-  });
-
-  return posts;
-}) satisfies GetStaticPaths;
-
-const { entry, headings } = Astro.props as {
-  entry: CollectionEntry<"docs">;
-  headings: Heading[];
-};
-
-const { Content } = await entry.render();
-const idAndData = { headings, ...entry.data };
+const post = Astro.props
+const { Content, headings } = await post.render()
 ---
 
-<DocsLayout {...idAndData}>
+<MainLayout headings={headings} {...post.data}>
   <Content />
-</DocsLayout>
+</MainLayout>

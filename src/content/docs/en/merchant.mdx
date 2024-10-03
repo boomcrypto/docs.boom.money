@@ -1,0 +1,128 @@
+---
+title: 'How to Use Stacks Pay as a Merchant'
+description: 'Stacks Pay allows merchants to accept payments in cryptocurrency quickly and securely on the Stacks blockchain.'
+---
+
+### **Getting Started**
+
+Stacks Pay allows merchants to accept payments in cryptocurrency quickly and securely on the Stacks blockchain. Whether you're selling products, accepting donations, or invoicing clients, Stacks Pay generates encoded payment links or QR codes that your customers can use to make payments to your Stacks wallet.
+
+Payment links can be generated via our SDK or API (locations will be added later). While **Boom Wallet** supports generating Stacks Pay links, any Stacks-compatible wallet (such as **Xverse** or **Leather**) can be used to receive payments. Additionally, any merchant that accepts Stacks Pay can integrate it into their payment workflow.
+
+### **Step 1: Set Up Your Stacks Wallet**
+
+Before you can begin accepting payments, you’ll need a Stacks wallet to receive funds. If you don’t already have one, follow these steps:
+
+1. **Choose a Wallet**: You can use any Stacks-compatible wallet to receive payments, such as [Xverse](https://www.xverse.app/), [Leather](https://leather.io/), or [Boom Wallet](https://www.boomwallet.app).
+
+2. **Create Your Wallet**: Download and install the wallet of your choice, then follow the instructions to create a new wallet. Make sure to safely store your recovery phrase, as it's essential for accessing your funds.
+
+3. **Get Your Stacks Address**: After setting up your wallet, copy your Stacks address. It’s typically a long string starting with "SP" (e.g., `SP2YDB...`). This is the address you’ll use to receive payments.
+
+### **Step 2: Create a Payment Request**
+
+To accept payments, you’ll need to generate a Stacks Pay payment link. You can generate these encoded payment links using our SDK or API (locations will be added later). While **Boom Wallet** supports generating Stacks Pay links, merchants can integrate Stacks Pay into their own systems.
+
+Here’s how to generate a Stacks Pay payment link:
+
+1. **Use the SDK or API**:
+   - Utilize our SDK or API to generate a payment link by providing the necessary payment details.
+   - Enter the following information:
+     - **Recipient**: BNS name or Stacks address where the payment will be sent.
+     - **Amount**: The fixed amount (in STX or tokens) if you’re selling a product. For donations or open-ended payments, you can leave this blank, allowing the customer to enter their desired amount.
+     - **Description**: A short description of the payment (e.g., “Payment for consulting services” or “Donation to support our nonprofit”).
+     - **Stacks Pay ID (spId)**: By default, an `spId` will be automatically generated. However, you can provide a custom `spId` to tie the payment to your internal order numbers or workflows.
+
+   **Note**: Documentation and resources for the SDK and API will be available soon. Please check back for updates.
+
+2. **Generate the Encoded Payment Link**:
+   - The SDK or API will create a Bech32m-encoded payment link based on the information provided.
+   - **Note**: Stacks Pay URLs are always encoded to ensure compatibility, security, and error detection. The encoded link will look something like:
+     ```
+     stxpay1qpz9eyarqj8guvs49epj7wp6rszpe6sczxsrdsgx5uqzgkx5fw
+     ```
+     This encoded link ensures that the payment details are securely transmitted to the customer’s wallet.
+
+3. **Generate the QR Code (Optional)**:
+   - If you’re handling in-person transactions or want to make it easier for mobile users, you can also generate a QR code from the payment link. Many tools and libraries offer the option to generate a QR code from a URL.
+
+### **Step 3: Share the Payment Request with Your Customer**
+
+Once you’ve generated the Stacks Pay link or QR code, you can easily share it with your customers.
+
+1. **Via Email or Messaging**:
+   - Copy the encoded payment link and include it in an email or message to your customer.
+   - Example: “Please click the link below to complete your payment: [Encoded Payment Link]”
+
+2. **Embed on Your Website**:
+   - If you run an online store, you can embed the payment link as a button on your website.
+   - Example: Add a “Pay with Stacks” button that links to the encoded payment URL for a seamless customer experience.
+
+3. **Use a QR Code for In-Person Payments**:
+   - For mobile-first or in-person payments, display the generated QR code at checkout. Your customer can scan the QR code with their wallet app (such as Boom, Xverse, or Leather) to initiate the payment.
+
+### **Step 4: Receive Payments in Your Wallet**
+
+Once your customer completes the payment, the funds will be sent directly to your Stacks wallet. Here’s how to track and verify the payment:
+
+1. **Check Your Wallet**:
+   - Log into your wallet (Boom, Xverse, Leather, etc.) and monitor incoming transactions. Payments should appear shortly after they’ve been confirmed on the blockchain.
+
+2. **Verify the Payment**:
+   - Check the transaction details to ensure that the correct amount has been sent. The `spId` (Stacks Pay ID) can help you confirm that the payment matches your specific request.
+
+3. **Track the Payment on the Blockchain**:
+   - Since Stacks Pay operates on the Stacks blockchain, you can view every transaction publicly on a blockchain explorer like [Stacks Explorer](https://explorer.stacks.co). Simply enter your Stacks address to view the payment status.
+
+### **Step 5: Best Practices for Using Stacks Pay**
+
+To ensure smooth payment processing for both you and your customers, follow these best practices:
+
+- **Use the SDK or API for Payment Generation**: Generate Stacks Pay payment links using our SDK or API to integrate seamlessly with your systems.
+
+- **Utilize the `spId` for Order Tracking**: Use the `spId` to tie payments to your internal order numbers or workflows. By default, an `spId` is automatically generated, but you can provide a custom `spId` when generating the payment link.
+
+- **Verify Payment Details**: Always double-check that the recipient address, amount, and description are correct before sharing the payment link.
+
+- **Share Payment Links Securely**: When sharing links via email, messaging apps, or websites, ensure that they are transmitted securely. Always preview the link before sending to prevent errors.
+
+- **Monitor Your Payments**: Keep an eye on your wallet for incoming transactions. For merchants handling multiple payments, use the `spId` to track and verify each transaction efficiently.
+
+- **Secure Your Wallet**: For larger amounts, consider using a hardware wallet or enabling two-factor authentication (2FA) to protect your funds.
+
+- **Respond Quickly to Payment Issues**: If a customer accidentally sends the wrong amount or experiences a payment issue, verify the transaction on the blockchain and address any concerns promptly.
+
+### **Example: Accepting Payments with Stacks Pay**
+
+Let’s say you run an online store and want to accept payments in cryptocurrency. Here’s how you can use Stacks Pay to handle the process:
+
+1. **Create the Payment Request**:
+   - Use the SDK or API to generate a payment link.
+   - Enter your Stacks address as the recipient.
+   - Specify the amount for the product or service.
+   - Add a description like “Payment for Order #12345”.
+   - Provide an `spId` matching your internal order number (e.g., `Order12345`) to tie the payment to your order workflow.
+
+2. **Share the Payment Link**:
+   - Integrate the payment link into your checkout process.
+   - Customers can click the link or scan a QR code to initiate the payment.
+
+3. **Customer Makes the Payment**:
+   - The customer's wallet (Boom, Xverse, Leather, etc.) will open with the payment details filled in. They can confirm and complete the payment.
+
+4. **Verify the Payment**:
+   - You check your wallet or system to ensure the payment has been received. The `spId` helps you confirm the payment corresponds to the specific order.
+
+### **Next Steps for Merchants**
+
+Now that you understand how to create and manage Stacks Pay payment requests, it’s time to integrate it into your business:
+
+- **Use the SDK or API**: Begin creating encoded payment links for your products, services, or donations using our SDK or API (locations will be added later).
+
+- **Integrate with Your Systems**: Incorporate Stacks Pay into your existing payment workflows, utilizing the `spId` to track orders and payments.
+
+- **Share Payment Links with Customers**: Whether through your website, email, or QR codes, make it easy for customers to pay using Stacks Pay.
+
+- **Monitor Transactions**: Keep track of all incoming payments and verify them using your wallet or a blockchain explorer.
+
+For more information on how customers will use Stacks Pay to make payments, check out our [User Guide on How to Pay Using Stacks Pay](#how-to-pay-using-stacks-pay).

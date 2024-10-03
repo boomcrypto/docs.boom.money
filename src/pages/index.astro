@@ -1,11 +1,5 @@
----
-import BaseLayout from "@/layouts/BaseLayout.astro";
-import Hero from "@/components/home/hero.astro";
----
-
-<BaseLayout
-  title="Boom Docs"
-  description="Documentation for the Boom ecosystem."
->
-  <Hero />
-</BaseLayout>
+<script is:inline>
+  // Redirect your homepage to the first page of documentation.
+  // If you have a landing page, remove this script and add it here!
+  window.location.pathname = `/en/introduction`
+</script>
