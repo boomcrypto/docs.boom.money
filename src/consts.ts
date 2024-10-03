@@ -1,16 +1,15 @@
 export const SITE = {
   title: 'Boom',
-  description: 'Boom: Fast and easy Bitcoin payments',
+  description: 'Fast and easy Bitcoin payments',
   defaultLanguage: 'en-us'
 } as const
 
 export const OPEN_GRAPH = {
   image: {
     src: 'default-og-image.png',
-    alt:
-      'Boom logo,'
+    alt: 'Boom. Fast & easy Bitcoin payments.'
   },
-  twitter: 'boom_wallet'
+  twitter: 'boom_wallet',
 }
 
 export const KNOWN_LANGUAGES = {

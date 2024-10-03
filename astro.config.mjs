@@ -9,5 +9,5 @@ import sitemap from '@astrojs/sitemap'
 export default defineConfig({
   integrations: [mdx(), preact(), react(), sitemap()],
   base: `/`,
-  site: `https://stackspay.org`
+  site: `https://boom.money`
 })
