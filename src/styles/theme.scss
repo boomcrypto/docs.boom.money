@@ -18,6 +18,10 @@
    *
    */
 
+.foo {
+  color: hsl(292, 84%, 61%);
+}
+
   --color-base-white: 0, 0%;
   --color-base-black: 240, 100%;
   --color-base-gray: 215, 14%;
@@ -28,7 +32,7 @@
   --color-base-purple: 255, 85%;
   --color-base-red: 351, 100%;
   --color-base-yellow: 41, 100%;
-  --color-base-fuchsia: 297, 90%;
+  --color-base-fuchsia: 292, 84%;
 
   /*
    * Color palettes are made using --color-base 
@@ -49,6 +53,18 @@
   --color-gray-90: var(--color-base-gray), 90%;
   --color-gray-95: var(--color-base-gray), 95%;
 
+  // --color-fuchsia-5: var(--color-base-fuchsia), 5%;
+  // --color-fuchsia-10: var(--color-base-fuchsia), 10%;
+  // --color-fuchsia-20: var(--color-base-fuchsia), 20%;
+  // --color-fuchsia-30: var(--color-base-fuchsia), 30%;
+  // --color-fuchsia-40: var(--color-base-fuchsia), 40%;
+  // --color-fuchsia-50: var(--color-base-fuchsia), 50%;
+  // --color-fuchsia-60: var(--color-base-fuchsia), 60%;
+  // --color-fuchsia-70: var(--color-base-fuchsia), 70%;
+  // --color-fuchsia-80: var(--color-base-fuchsia), 80%;
+  // --color-fuchsia-90: var(--color-base-fuchsia), 90%;
+  // --color-fuchsia-95: var(--color-base-fuchsia), 95%;
+
   --color-blue: var(--color-base-blue), 61%;
   --color-blue-dark: var(--color-base-blue-dark), 39%;
   --color-green: var(--color-base-green), 42%;
@@ -56,13 +72,13 @@
   --color-purple: var(--color-base-purple), 54%;
   --color-red: var(--color-base-red), 54%;
   --color-yellow: var(--color-base-yellow), 59%;
-  --color-fuchsia: var(--color-base-fuchsia), 16%;
+  --color-fuchsia: var(--color-base-fuchsia), 61%;
 }
 
 :root {
   color-scheme: light;
-  --theme-accent: hsla(var(--color-fuchsia), 1);
-  --theme-text-accent: hsla(var(--color-fuchsia), 1);
+  --theme-accent: hsla(var(--color-fuchsia-95), 1);
+  --theme-text-accent: hsla(var(--color-fuchsia-95), 1);
   --theme-accent-opacity: 0.15;
   --theme-divider: hsla(var(--color-gray-95), 1);
   --theme-text: hsla(var(--color-gray-10), 1);
@@ -91,8 +107,8 @@ body {
 :root.theme-dark {
   color-scheme: dark;
   --theme-accent-opacity: 0.15;
-  --theme-accent: hsla(var(--color-fuchsia), 1);
-  --theme-text-accent: hsla(var(--color-fuchsia), 1);
+  --theme-accent: hsla(var(--color-fuchsia-30), 1);
+  --theme-text-accent: hsla(var(--color-fuchsia-30), 1);
   --theme-divider: hsla(var(--color-gray-10), 1);
   --theme-text: hsla(var(--color-gray-90), 1);
   --theme-text-light: hsla(var(--color-gray-80), 1);
